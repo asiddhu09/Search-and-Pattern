@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="styles2.css">
+
+</head>
+
+<body>
+    
+    <h1>Services we offer</h1>
+    <div id="box">
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque alias fugit cumque quos officiis suscipit!
+            Aliquam, perferendis enim. Assumenda similique atque iure delectus laudantium. Harum dignissimos in
+            veritatis
+            repudiandae at quam deleniti et culpa, similique provident! Asperiores quisquam magni quis, recusandae,
+            ipsum
+            perspiciatis harum id cupiditate eaque voluptatibus impedit similique vel pariatur magnam, aliquam iure.
+            Quidem
+            eaque praesentium at, obcaecati cupiditate hic molestias sit repellat quod error ullam fugiat voluptates
+            impedit
+            quia, rem earum perspiciatis atque neque maiores cumque est! Beatae, et veniam culpa ratione iusto quo
+            pariatur
+            commodi at dolorem eius officia iste corrupti! Nam dolore aliquam dolor in!</p>
+    </div>
+</body>
+
+&nbsp;&nbsp;&nbsp;&nbsp; Search:<input type="text" id="myInput1"
+        placeholder="Type here to search the things you're looking for" onkeyup="searchItem()">
+
+
+<section class="services-container">
+    <h1 class="heading1">Our Services</h1>
+    <div id="services">
+        <div id="box">
+            <img src=".." alt="">
+            <h2 class="h-secondary-center">Back</h2>
+            <p>This is for back</p>
+        </div>
+        <div id="box">
+            <img src=".." alt="">
+            <h2 class="h-secondary-center">Legs</h2>
+            <p>This is for Legs</p>
+        </div>
+        <div id="box">
+            <img src=".." alt="">
+            <h2 class="h-secondary-center">Weigth Loss</h2>
+            <p>This is for Weight Loss</p>
+        </div>
+        </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    
+<script>
+ var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+});
+
+// Script Code
+
+let filterArray =[];
+let serviceArray =[
+    {
+        "class": 1,
+        "name": "Back",
+        "desc":"This is for Back"
+    },
+    {
+        "class": 2,
+        "name": "Legs",
+        "desc":"This is for legs"
+    },
+    {
+        "class": 3,
+        "name": "Back",
+        "desc":"This is for Weight Loss"
+    }
+
+];
+
+showServices(serviceArray);
+
+function showServices(currArray)
+
+{
+    document.getElementById("box").innerText+"";
+    for(var i=0; i<currArray.length;i++)
+    {
+        document.getElementById("box").innerHTML+=
+        `
+    <div class="col-lg-4 col-md-4 col-10 col-xxl-4 mx-auto">
+          <div class="card mb-3" style="max-width: 540px;">
+            <h4 class="text-capitalize text-center">${currArray[i].name}</h4>
+            <div class="card-body">
+              <p class="card-text">${currArray[i].desc}</p>
+            </div>
+          </div>
+        </div>
+    `
+    }
+}
+
+
+//Searching using key input/events:
+
+document.getElementById("myInput1").addEventListener("Keyup",function(){
+    let text = document.getElementById("myInput1").value;
+    console.log(text);
+
+    filterArray = serviceArray.filter(function(a){
+        lowerText = a.name.toLowerCase();
+        console.log("Value of a : "+a);
+        if(lowerText.includes(text)){
+            return a.name;
+        }
+    });
+
+    console.log(filterArray);
+    if(this.value==""){
+        showServices(serviceArray);
+
+    }
+    else
+    {
+        if(filterArray=="")
+        {
+            document.getElementById("itemNotFound").style.display="block";
+            document.getElementById("box").innerHTML="";
+
+        }
+        else
+        {
+            showServices(filterArray);
+            document.getElementById("itemNotFound").style.display="none";
+        }
+    }
+})
+
+</script>
+
+
+</html>

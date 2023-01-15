@@ -1,0 +1,38 @@
+body{
+    background-color: rgb(200, 238, 234);
+}
+
+#search{
+    padding: .5rem;
+    margin-left:68rem;
+    color: blue;
+}
+#container
+{
+    border: 2px solid black;
+    padding: 1rem;
+    border-radius: 15px;
+}
+h2{
+    text-align: center;
+    color: rgb(3, 45, 52);
+}
+
+#cardsection{
+    display: flex;
+}
+
+#card{
+    border: .3rem solid grey;
+    padding: 1rem;
+    margin: 2px;
+    border-radius: 15px;
+}
+#card h4{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+

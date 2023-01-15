@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="styles.css"/> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cssforservice2.css">
+
+</head>
+
+<body>
+
+    <P id="search"> Search:<input id="searchbox" type="text"> </P>
+    <h2>Service Provided by our GYM</h2>
+    <hr class="w-25 mx-auto"/>
+
+    <!-- Dynamic Cards -->
+    <div class="container">
+
+        <h3 class="text-danger text-center" id="itemNotFound" style="display: none;">Service not found.</h3>
+  
+        <div class="row" id="card">
+  
+  
+  
+        </div>
+
+        <!-- Footer 
+        <footer class="bg-primary text-center text-white fs-4 fixed-bottom">
+            <p> @copyright 2023 </p>
+          </footer>
+ -->
+
+
+
+    <!-- <div id="container">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, perspiciatis. Exercitationem totam ad
+            saepe magnam explicabo quis. Saepe laboriosam deserunt suscipit repellat neque, est optio eligendi hic enim
+            necessitatibus esse quaerat? Voluptate fugit minima eaque tenetur mollitia. Recusandae itaque, quas est,
+            asperiores laboriosam aspernatur, natus rerum pariatur atque adipisci ex?</p> -->
+
+    </div>
+    <!-- <h3>Below are some Services</h3>
+    <section id="cardsection">
+        <div id="card">
+            <img src="excer.jpeg" class="card-img-top" alt="...">
+            <h4>Suppliments</h4>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, rerum modi. Vitae architecto maiores esse.
+            </p>
+        </div>
+
+        <div id="card">
+            <img src="excer.jpeg" class="card-img-top" alt="...">
+            <h4>Leg Excercies</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ipsa quisquam id soluta in dolores?</p>
+        </div>
+
+        <div id="card">
+            <img src="excer.jpeg" class="card-img-top" alt="...">
+            <h4>Back Excercies</h4>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis reiciendis natus molestiae quia, culpa
+                autem!</p>
+        </div>
+
+        <div id="card">
+            <img src="excer.jpeg" class="card-img-top" alt="...">
+            <h4>Weigth Loss</h4>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo minima odit laborum amet sunt eius!</p>
+        </div>
+
+    </section> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script>
+
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl){
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        });
+
+
+        //Script Code
+
+        let filterArray =[];
+        let serviceArray =[
+            {
+                "id" : 1,
+                "name": "Suppliments",
+                "src":"excer.jpeg",
+                "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum, rerum modi. Vitae architecto maiores esse."
+            },
+
+            {
+                "id" : 2,
+                "name": "Leg Excercies",
+                "src":"excer.jpeg",
+                "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem ipsa quisquam id soluta in dolores?"
+            },
+
+            {
+                "id" : 3,
+                "name": "Back Excercies",
+                "src":"excer.jpeg",
+                "desc":"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis reiciendis natus molestiae quia, culpa autem!"
+            },
+
+            {
+                "id" : 4,
+                "name": "Weight Loss",
+                "src":"excer.jpeg",
+                "desc":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nemo minima odit laborum amet sunt eius!"
+            },
+        ];
+
+        showServices(serviceArray);
+
+        function showServices(currArray)
+        {
+            document.getElementById("card").innerText = "";
+            for(var i=0; i<currArray.length;i++)
+            {
+                document.getElementById("card").innerHTML += `
+                <div class="col-lg-4 col-md-4 col-10 col-xxl-4 mx-auto">
+          <div class="card mb-3" style="max-width: 540px;">
+            <h4 class="text-capitalize text-center">${currArray[i].name}</h4>
+            <img src="${currArray[i].src}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">${currArray[i].desc}</p>
+            </div>
+          </div>
+        </div>`
+            }
+        }
+
+        // live searching
+
+        document.getElementById("searchbox").addEventListener("keyup", function(){
+            let text = document.getElementById("searchbox").value;
+            console.log(text);
+
+            filterArray = serviceArray.filter(function(a){
+                lowerText = a.name.toLowerCase();
+                console.log("value of a"+a);
+                if(lowerText.includes(text)){
+                    return a.name;
+                }
+            });
+
+            console.log(filterArray);
+            if(this.value=="")
+            {
+                showServices(serviceArray);
+
+            }
+            else
+            {
+                if(filterArray=="")
+                {
+                    document.getElementById("itemNotFound").style.display="block";
+                    document.getElementById("card").innerHTML="";
+                    
+                }
+
+                else{
+                    showServices(filterArray);
+                    document.getElementById("itemNotFound").style.display="none"
+                }
+            }
+        })
+
+
+    </script>
+
+</body>
+
+</html>

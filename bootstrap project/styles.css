@@ -1,0 +1,120 @@
+*{
+    margin: 0;padding: 0;
+}
+/* body{
+    background-image: linear-gradient(rgb(115, 59, 59), rgb(161, 243, 247));
+} */
+
+/* Navigation barn  */
+body{
+    background-color: rgb(255, 255, 255);
+}
+.navbar
+{
+    display: flex;
+background-color: black;
+color: white;
+align-items: center;
+border: 2px solid black;
+border-radius: 50px;
+margin: 5px;
+position: relative;
+}
+
+.navbar ul{
+    display: flex;
+list-style: none;
+}
+
+.navbar ul li{
+    text-decoration: none;
+list-style: none;
+padding: 5px 3px;
+}
+
+.navbar ul li  a:hover{
+    color: rgb(17, 17, 16);
+    background-color: rgb(127, 244, 145);
+    border-radius: 15px;
+}
+
+.navbar ul li  a{
+    color: white;
+    text-decoration: none;
+    
+}
+
+
+input{
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius: 50px;
+}
+
+.btn{
+    background-color: rgb(11, 11, 11);
+    margin-left: 650px;
+    border: 1px solid rgb(254, 254, 254);
+    border-radius: 20px;
+}
+
+.btn:hover{
+    background-color: rgb(246, 239, 136);
+    color: rgb(0, 7, 0);
+}
+
+#home::before{
+    content: "";
+    position: absolute;
+    background: url('logo.png');
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .7;
+}
+
+h1{
+    margin-left: 190px;
+    color: rgb(123, 5, 197);
+}
+.box{
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 12px;
+    margin: 10px;
+}
+#services{
+    margin: 10px;
+    display: flex;   
+}
+#services .box{
+    padding: 115px;
+    border: 2px solid rgb(15, 2, 2);
+    border-radius: 45px;
+    padding: 34px;
+    margin: 3px 6px;
+    background-color: rgba(196, 253, 242, 0.444);
+}
+.heading1{
+    margin-left: 560px;
+}
+
+/* cards */
+.card{
+    margin: 10px;
+}
+.card-title{
+    color: red
+}
+.card-body{
+    background-color: black;
+    color: white;
+
+}
+footer{
+    padding: 12px;
+    background-color: rgb(169, 162, 162);
+    color: rgb(18, 17, 17);
+    border-radius: 10px;
+    margin: 14px;
+}

@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin-left: 550px;
+}
+h2{
+    color: rgb(191, 53, 3);
+}
+
+#services{
+    margin: 10px;
+    display: flex;   
+}
+#myInput1{
+    margin-top: 45px;
+    margin-left: 15px;
+    width: 505px;
+    height: 35px;
+}
+#services .box{
+    padding: 115px;
+    border: 2px solid rgb(15, 2, 2);
+    border-radius: 45px;
+    padding: 34px;
+    margin: 3px 6px;
+    background-color: rgba(196, 253, 242, 0.444);
+}
+.heading1{
+    margin-left: 550px;
+}
+#box{
+    border: 2px double rgb(48, 47, 47);
+    border-radius: 25px;
+    padding: 20px;
+    background-color: azure;
+    margin: 15px;
+}
+.box2{
+    border: 7px double black;
+    padding: 15px;
+}
+
+.card{
+    display: inline-block;
+    margin: 75px;
+    box-shadow: 10px 5px rgb(190, 192, 190);
+    
+}
+
+.gal{
+    margin-left: 550px;
+    margin-top: 35px;
+    color: rgb(209, 76, 4);
+}
+
+.contacts{
+    margin: 50px;
+background-color: rgb(192, 192, 244);
+}
